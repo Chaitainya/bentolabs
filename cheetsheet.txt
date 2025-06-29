@@ -1,0 +1,100 @@
+ANGULAR
+"local": "ng serve --host 0.0.0.0 --port 3030 --disable-host-check --configuration=local",
+
+<--- JS stacktrace --->
+FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
+"local": "node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve --port 3030 --configuration=local",
+node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve
+export NODE_OPTIONS="--max-old-space-size=5120"
+
+sh ../rs.sh
+
+node --max-old-space-size=4096 ./node_modules/@angular/cli/bin/ng serve --host 0.0.0.0 --port 3030 --disable-host-check --configuration=local
+
+ADNAN
+ssh -R chaitanya:80:localhost:6003 serveo.net
+
+UBUNTU
+
+Kill Port Installation
+npm i kill-port
+npm install --global kill-port
+yarn global add kill-port
+
+# Kill a single port
+npx kill-port --port 3030
+npx-kill port 3030
+
+# Use UDP
+npx kill-port 5002 --method udp
+
+# Kill multiple ports
+npx kill-port --port 3030,5000,5002
+npx kill-port 3030 5000 5002
+
+lsof -i tcp:3030	
+kill -9 PID
+
+GIT
+rm /home/chay/Propflo/prop-web-client-admin/.git/index.lock
+git add .
+git commit -m "commit message"
+git add . && git commit -m "commit message"
+git commit -am "commit message"
+git branch --show-current
+git push --set-upstream origin <branch name>
+git push --set-upstream origin $(git branch --show-current)
+git revert <commit no>
+git branch
+git branch | grep <part of branch name>
+git checkout -b "new branch name"
+git branch -m old-name new-name
+git branch -D "branch name to delete"
+
+git reset HEAD~1 [Undo the last commit but keep changes]
+git reset --hard HEAD~1 [Undo the last commit and remove changes]
+
+
+git pull --rebase origin branchName
+git rebase --continue
+git rebase --abort
+
+2004@CharomanilGopinatha@2024
+
+JIRA Credentials
+propflo-devsales@bentolabs.io
+W3lc0m3@b3nt0_PFSales
+
+ng version --> To check the version but not the core version
+npm list @angular/core --> To check the core version
+@angular/core@14.3.0 --> Core version of this current computer
+npm info @angular/core version --> This will display the latest published version of Angular.
+
+a.trim().split(/\s+/).join(" ");
+trim() removes leading and trailing spaces.
+split(/\s+/) splits the string by one or more whitespace characters.
+join(" ") joins the words with a single space.
+
+gh auth login
+password
+BITBUCKET_PASS
+
+To set environment variable
+export BITBUCKET_PASS=""
+
+curl -u "Chaitu8121:$BITBUCKET_PASS" "https://api.bitbucket.org/2.0/workspaces/assetmonk-engineering/members?pagelen=100" | grep "Saichandhra Arvapally"
+
+To raise PR
+curl -X POST -u "Chaitu8121:$BITBUCKET_PASS" \
+  -H "Content-Type: application/json" \
+  "https://api.bitbucket.org/2.0/repositories/assetmonk-engineering/prop-web-client-admin/pullrequests" \
+  -d '{
+    "title": "title:UI issue in invite user fixed",
+    "source": { "branch": { "name": "bugfix/PROP23-5793" } },
+    "destination": { "branch": { "name": "TEST_V2" } },
+    "description": "description:UI issue in invite user fixed",
+    "close_source_branch": false
+  }'
+
+
+
